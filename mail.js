@@ -1,18 +1,20 @@
 const form = document.getElementById("mailForm");
 
-const nome = document.getElementsById("name");
-const mail = document.getElementsById("email");
-const description = document.getElementsById("message");
+const nome = document.getElementById("name");
+const mail = document.getElementById("email");
+const description = document.getElementById("message");
 
 
 form.addEventListener("submit",function(event){
 event.preventDefault();
 
 const templateParams={
-name: nome.name.value,
-email: mail.email.value,
-message: description.message.value,
+name: nome.value,
+email: mail.value,
+message: description.value,
 };
+
+console.log("dati inviati", templateParams);
 
 emailjs.send('service_ceyogv9', 'template_t52rosd', templateParams).then(
   (response) => {
@@ -22,6 +24,6 @@ emailjs.send('service_ceyogv9', 'template_t52rosd', templateParams).then(
   (error) => {
     console.log('FAILED...', error);
   },
-  
+
 );
 })
