@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #e9fd31;
+  --surface-2: #181818;
+  --border: #2c2c2c;
+  --text: #f0ede6;
+  --text-muted: rgba(240, 237, 230, 0.45);
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+body {
+  background-color: #000000;
+  color: var(--text);
+  font-family: var(--font-mono);
+  line-height: 1.45;
+}
+
+a {
+  height: clamp(28px, 4.5vh, 38px);
+  padding: 0 clamp(12px, 2vw, 20px);
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: clamp(0.68rem, 1.3vh, 0.8rem);
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  border-color: var(--border);
+  background: var(--surface-2);
+}
+
+header {
+ display: flex;
+ gap: 8px;
+ justify-content: flex-end;
+ align-items: center;
+}
